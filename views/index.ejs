@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> <!-- Lidhja me bootstrap -->
+	<link rel="stylesheet" type="text/css" href="main.css">
+    <meta charset="UTF-8"> <!-- Sherben per paraqitjen e shkronjave Ë dhe Ç -->
+  <title>Kontratat</title>
+	</head>
+	<body>
+		<div class="container">
+			<h1 style="color: #007fdb;"><b>Shto kontratën e re</b></h1>
+        	<br>
+
+        <!-- Prokurorimi -->
+        <h3> Prokurorimi </h3>
+			<form method="POST" action="/kontrat/add">
+<div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="formGroupExampleInput" >Nr rendor i prokurorimit</label>
+              <input type="text" class="form-control"   placeholder="Nr rendor i prokurorimit" name="title" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="formGroupExampleInput">Lloji i prokurorimit</label>
+              <input type="txet" class="form-control" placeholder="Lloji i prokurorimit" name="description" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Aktiviteti i prokurorimit</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" name="aktiviteti" placeholder="Aktiviteti i prokurorimit" required>
+          </div>
+          <!-- Ketu perfundon prokurorimi -->
+          <br>
+
+          <!-- Datat -->
+          <h3>Datat:</h3>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="formGroupExampleInput">Data e inicimit te aktivitetit</label>
+                  <input class="form-control" type="date"  name="datainicimit" id="example-date-input" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="formGroupExampleInput">Data e publikimit te shpalljes</label>
+                  <input class="form-control" type="date"  name="publikimishpalljes" id="example-date-input" required>
+              </div>
+            </div>
+          
+          <div class="form-group">
+            <label for="formGroupExampleInput">Data e nenshkrimit te kontrates</label>
+            <input class="form-control" type="date"  name="datanenshkrimit" id="example-date-input" required>
+          </div>
+          <br>
+          <h6>Afatet per implementim te kontrates</h6>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+                <input class="form-control" type="date"  name="afatetetperimplementim" id="example-date-input" required>
+            </div>
+          <div class="form-group col-md-6">
+                <input class="form-control" type="date"  name="afatetetperimplementim2" id="example-date-input" required>
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Data e permbylljes se kontrates (data e pranimit te perkohshem / preliminar)</label>
+            <input class="form-control" type="date"  name="datapermbylljes" id="example-date-input" required>
+          </div>
+          <!-- Ketu perfundojn datat -->
+          <br>
+
+          <!-- Cmimet -->
+          <h3>Çmimi dhe të dhëna të tjera:</h3>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="formGroupExampleInput">Çmimi i kontratës (pershirë të gjitha taksat)</label>
+              <input type="text" class="form-control" name="cmimikontrates"  placeholder="Çmimi i kontratës" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="formGroupExampleInput">Çmimi total i paguar per kontrat</label>
+              <input type="type" class="form-control" name="cmimitotalipaguar" placeholder="Çmimi total" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Emri i te cilit i eshte dhene kontrata</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" name="emriikontratdhenesit" placeholder="Emri dhe mbiemri" required>
+          </div>
+          <!-- Ketu perfundojn cmimet-->
+
+          <br>
+
+          <!-- Dergo dhe fshij -->
+          <div class="form-group">
+            <div class="col-xs-6 text-center">
+            <button type="Subbmit" class="btn btn-primary btn-lg" value="Dergo">Dergo</button>
+            <input type="reset" class="btn btn-secondary btn-lg" value="Fshij">
+            </div>
+          </div>
+          <!-- Ketu perfundon Dergo dhe Fshij -->
+			<br>
+		</form>
+		<hr>
+		<h4>Kontratat Aktive:</h4>
+		<br>
+		<% docs.map((doc) => { %><p></p><% }); %>
+		<ol class="list-styled">
+			<% docs.map((doc) => { %>
+			<hr>
+			<div class="form-row">
+				<div class="form-group col-md-6"> <li><i> &nbsp  Nr rendor i prokurorimit: &nbsp&nbsp</i> <f> &nbsp&nbsp<%= doc.title %> &nbsp&nbsp</f>
+				</div> 
+				<a class="btn btn-primary" href="/kontrat/<%= doc._id%>">Shiko Kontraten</a> <p> &nbsp </p> <a class="btn btn-danger" href="/kontrat/edit/<%= doc._id %>">Ndrysho Kontraten</a> <p> &nbsp </p><a class="btn btn-dark" href="/kontrat/delete/<%= doc._id %>">Fshije kontraten</a></li>
+			<hr>
+			</div> <br>
+			<% }); %>
+		</ol>
+		<hr>
+		</div>
+	</body>
+</html>

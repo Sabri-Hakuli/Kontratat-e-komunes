@@ -1,0 +1,72 @@
+	<head>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> <!-- Lidhja me bootstrap -->
+	<link rel="stylesheet" type="text/css" href="main.css">
+	
+    <meta charset="UTF-8"> <!-- Sherben per paraqitjen e shkronjave Ë dhe Ç -->
+	</head>
+
+<body>
+<div class="container">
+
+	<h1 style="color: #007fdb;"><b>Kontrata</b></h1>
+<br>
+<br>
+<table class="table" style="border: 2px solid #212529;">
+  <thead class="thead-dark">
+
+
+  <tr>
+    <th scope="col">Nr rendor i prokurorimit</th>
+    <td scope="row"><%= doc.title %></td>
+  </tr>
+  <tr>
+    <th>Lloji i prokurorimit</th>
+    <td><%= doc.description %></td>
+  </tr>
+  <tr>
+    <th>Aktiviteti i prokurorimit</th>
+    <td><%= doc.aktiviteti %></td>
+  </tr>
+  <tr>
+    <th>Data e inicimit te aktivitetit</th>
+    <td><%= doc.datainicimit %></td>
+  </tr>
+  <tr>
+    <th>Data e publikimit te shpalljes</th>
+    <td><%= doc.publikimishpalljes %></td>
+  </tr>
+  <tr>
+    <th>Data e nenshkrimit te kontrates</th>
+    <td><%= doc.datanenshkrimit %></td>
+  </tr>
+  <tr>
+    <th>Afatet per implementim te kontrates</th>
+    <td><%= doc.afatetetperimplementim %> dhe <%= doc.afatetetperimplementim2 %></td>
+  </tr>
+  <tr>
+    <th>Data e permbylljes se kontrates <br>(data e pranimit te perkohshem / preliminar)</th>
+    <td><%= doc.datapermbylljes %></td>
+  </tr>
+  <tr>
+    <th>Çmimi i kontratës (pershirë të gjitha taksat)</th>
+    <td><%= doc.cmimikontrates %></td>
+  </tr>
+  <tr>
+    <th>Çmimi total i paguar per kontrat</th>
+    <td><%= doc.cmimitotalipaguar %></td>
+  </tr>
+    <tr>
+  <th>Emri i te cilit i eshte dhene kontrata</th>
+    <td><%= doc.emriikontratdhenesit %></td>
+  </tr>
+
+    </tbody>
+  </thead>
+ </table>
+<hr>
+<button class="btn btn-warning btn-lg" onclick="goBack()">Shko nje hap mbrapa</button><script type="text/javascript">function goBack() { window.history.back(); }</script> <button class="btn btn-danger btn-lg" onclick="myFunction()">Shtype kete kontrate</button><script type="text/javascript">function myFunction() {window.print();}</script> <a class="btn btn-success btn-lg" href="/kontrat/edit/<%= doc._id %>">Ndrysho Kontraten</a>
+<a class="btn btn-dark btn-lg" href="/kontrat/delete/<%= doc._id %>">Fshije kontraten</a>
+
+
+</div>
+</body>
