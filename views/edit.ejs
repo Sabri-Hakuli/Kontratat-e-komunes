@@ -1,26 +1,38 @@
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> <!-- Lidhja me bootstrap -->
-<link rel="stylesheet" type="text/css" href="main.css">
-<meta charset="UTF-8"> <!-- Sherben per paraqitjen e shkronjave Ë dhe Ç -->
-
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> <!-- Lidhja me bootstrap -->
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <meta charset="UTF-8"> 
+  <title>Kontratat</title>
+  </head>
+<body>
 <div class="container">
-	<h1 style="color: #007fdb;"><b>Ndryshoni</b></h1>
+      <div class="form-row">
+          <div class="form-group col-md-6">
+            <h1 style="color: #007fdb;"><b>Ndryshoni</b></h1>
+          </div>
+          <div class="form-group col-md-6">
+              <img src="prishtina.svg" width="100px" align="right">
+          </div>
+      </div>
+
 	<br>
 	<br>
 	<form method="POST" action="/kontrat/update/<%= doc._id %>">
-			
 <div class="form-row">
             <div class="form-group col-md-6">
               <label for="formGroupExampleInput" >Nr rendor i prokurorimit</label>
-              <input type="text" class="form-control"   placeholder="Nr rendor i prokurorimit" name="title" required >
+              <input type="text" class="form-control"   placeholder="Nr rendor i prokurorimit" name="title" value="<%= doc.title %>" required>
             </div>
             <div class="form-group col-md-6">
               <label for="formGroupExampleInput">Lloji i prokurorimit</label>
-              <input type="txet" class="form-control" placeholder="Lloji i prokurorimit" name="description"  required>
+              <input type="text" class="form-control" placeholder="Lloji i prokurorimit" name="description" value="<%= doc.description %>" required>
             </div>
           </div>
           <div class="form-group">
             <label for="formGroupExampleInput">Aktiviteti i prokurorimit</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" name="aktiviteti" placeholder="Aktiviteti i prokurorimit" required>
+            <input type="text" class="form-control" id="formGroupExampleInput" name="aktiviteti" placeholder="Aktiviteti i prokurorimit" value="<%= doc.aktiviteti %>" required>
           </div>
           <!-- Ketu perfundon prokurorimi -->
           <br>
@@ -30,31 +42,31 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="formGroupExampleInput">Data e inicimit te aktivitetit</label>
-                  <input class="form-control" type="date"  name="datainicimit" id="example-date-input" required >
+                  <input class="form-control" type="date"  name="datainicimit" id="example-date-input" value="<%= doc.datainicimit %>" required >
                 </div>
                 <div class="form-group col-md-6">
                   <label for="formGroupExampleInput">Data e publikimit te shpalljes</label>
-                  <input class="form-control" type="date"  name="publikimishpalljes" id="example-date-input" required>
+                  <input class="form-control" type="date"  name="publikimishpalljes" id="example-date-input" value="<%= doc.publikimishpalljes %>" required>
               </div>
             </div>
           
           <div class="form-group">
             <label for="formGroupExampleInput">Data e nenshkrimit te kontrates</label>
-            <input class="form-control" type="date"  name="datanenshkrimit" id="example-date-input" required>
+            <input class="form-control" type="date"  name="datanenshkrimit" id="example-date-input" value="<%= doc.datanenshkrimit %>" required>
           </div>
           <br>
           <h6>Afatet per implementim te kontrates</h6>
           <div class="form-row">
             <div class="form-group col-md-6">
-                <input class="form-control" type="date"  name="afatetetperimplementim" id="example-date-input" required>
+                <input class="form-control" type="date"  name="afatetetperimplementim" id="example-date-input" value="<%= doc.afatetetperimplementim %>" required>
             </div>
           <div class="form-group col-md-6">
-                <input class="form-control" type="date"  name="afatetetperimplementim2" id="example-date-input" required>
+                <input class="form-control" type="date"  name="afatetetperimplementim2" id="example-date-input" value="<%= doc.afatetetperimplementim2 %>" required>
           </div>
           </div>
           <div class="form-group">
             <label for="formGroupExampleInput">Data e permbylljes se kontrates (data e pranimit te perkohshem / preliminar)</label>
-            <input class="form-control" type="date"  name="datapermbylljes" id="example-date-input" required>
+            <input class="form-control" type="date"  name="datapermbylljes" id="example-date-input" value="<%= doc.datapermbylljes %>" required>
           </div>
           <!-- Ketu perfundojn datat -->
           <br>
@@ -65,16 +77,16 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="formGroupExampleInput">Çmimi i kontratës (pershirë të gjitha taksat)</label>
-              <input type="text" class="form-control" name="cmimikontrates"  placeholder="Çmimi i kontratës" required>
+              <input type="text" class="form-control" name="cmimikontrates"  placeholder="Çmimi i kontratës" value="<%= doc.cmimikontrates %>" required>
             </div>
             <div class="form-group col-md-6">
               <label for="formGroupExampleInput">Çmimi total i paguar per kontrat</label>
-              <input type="type" class="form-control" name="cmimitotalipaguar" placeholder="Çmimi total" required>
+              <input type="type" class="form-control" name="cmimitotalipaguar" placeholder="Çmimi total" value="<%= doc.cmimitotalipaguar %>" required>
             </div>
           </div>
           <div class="form-group">
             <label for="formGroupExampleInput">Emri i te cilit i eshte dhene kontrata</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" name="emriikontratdhenesit" placeholder="Emri dhe mbiemri" required>
+            <input type="text" class="form-control" id="formGroupExampleInput" name="emriikontratdhenesit" placeholder="Emri dhe mbiemri" value="<%= doc.emriikontratdhenesit %>" required>
           </div>
           <!-- Ketu perfundojn cmimet-->
 
@@ -93,11 +105,8 @@
           </div>
           <!-- Ketu perfundon Dergo dhe Fshij -->
 			<br>
-
-
-
-
 		</div>
+</body>
 </form>
 </div>
 

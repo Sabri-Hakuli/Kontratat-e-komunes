@@ -29,42 +29,34 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 
 app.post('/kontrat/add', (req,res,next)=>{
-
-  kontrats.insert({title: req.body.title, description: req.body.description, aktiviteti: req.body.aktiviteti, datainicimit: req.body.datainicimit,
-   publikimishpalljes: req.body.publikimishpalljes, datanenshkrimit: req.body.datanenshkrimit, afatetetperimplementim: req.body.afatetetperimplementim,
-	afatetetperimplementim2: req.body.afatetetperimplementim2, datapermbylljes: req.body.datapermbylljes, cmimikontrates: req.body.cmimikontrates,
-	cmimitotalipaguar: req.body.cmimitotalipaguar, emriikontratdhenesit: req.body.emriikontratdhenesit}, 
-
+  kontrats.insert({title: req.body.title, 
+  	description: req.body.description, 
+  	aktiviteti: req.body.aktiviteti, 
+  	datainicimit: req.body.datainicimit,
+  	publikimishpalljes: req.body.publikimishpalljes, 
+   	datanenshkrimit: req.body.datanenshkrimit, 
+   	afatetetperimplementim: req.body.afatetetperimplementim,
+	afatetetperimplementim2: req.body.afatetetperimplementim2, 
+	datapermbylljes: req.body.datapermbylljes, 
+	cmimikontrates: req.body.cmimikontrates,
+	cmimitotalipaguar: req.body.cmimitotalipaguar, 
+	emriikontratdhenesit: req.body.emriikontratdhenesit}, 
   	(err,document)=>{
-
     if (err) {
-
       console.log(err);
-
       return;
-
     }
-
     res.redirect('/');
-
   })
-
 })
 
 app.get('/',function(req,res){
-
   kontrats.find({}).toArray(function(err,docs){
-
     if (err) {
-
       console.log(err);
-
     }
-
     res.render('index',{docs:docs});
-
   });
-
 });
 
 
@@ -95,10 +87,18 @@ app.get("/kontrat/edit/:id", function(req, res) {
 
 app.post("/kontrat/update/:id", function(req, res) {
 	kontrats.updateOne({_id: ObjectID(req.params.id)},
-		{$set: {title: req.body.title, description: req.body.description, aktiviteti: req.body.aktiviteti, datainicimit: req.body.datainicimit,
-   publikimishpalljes: req.body.publikimishpalljes, datanenshkrimit: req.body.datanenshkrimit, afatetetperimplementim: req.body.afatetetperimplementim,
-	afatetetperimplementim2: req.body.afatetetperimplementim2, datapermbylljes: req.body.datapermbylljes, cmimikontrates: req.body.cmimikontrates,
-	cmimitotalipaguar: req.body.cmimitotalipaguar, emriikontratdhenesit: req.body.emriikontratdhenesit}}, function(err, doc) {
+		{$set: {title: req.body.title, 
+			description: req.body.description, 
+			aktiviteti: req.body.aktiviteti, 
+			datainicimit: req.body.datainicimit,
+		   	publikimishpalljes: req.body.publikimishpalljes, 
+		   	datanenshkrimit: req.body.datanenshkrimit, 
+		   	afatetetperimplementim: req.body.afatetetperimplementim,
+			afatetetperimplementim2: req.body.afatetetperimplementim2, 
+			datapermbylljes: req.body.datapermbylljes, 
+			cmimikontrates: req.body.cmimikontrates,
+			cmimitotalipaguar: req.body.cmimitotalipaguar, 
+			emriikontratdhenesit: req.body.emriikontratdhenesit}}, function(err, doc) {
 		if(err) {
 			console.log(err);
 		}
@@ -120,25 +120,11 @@ app.get("/kontrat/delete/:id", function(req, res) {
 
 
 
-function goBack() {
-    window.history.back();
-}
-
 
 app.listen(3000, 'localhost', (err)=>{
-
   if (err) {
-
     console.log('Something is wrong '+ err);
-
     return;
-
   }
-
   console.log("Server is running");
-
 })
-
-function myFunction() {
-    window.print();
-}
