@@ -20,12 +20,13 @@ MongoClient.connect(DB_URI, (err, db) =>  {
 	console.log("Connected to:" + DB_URI);
 })
 
-app.use(express.static(path.join(__dirname, "public"))); //per foto, css dhe js
+app.use(express.static(path.join(__dirname, "/public"))); //per foto, css dhe js
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}));
+
 
 
 app.post('/kontrat/add', (req,res,next)=>{

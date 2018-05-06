@@ -2,7 +2,7 @@
 <html>
   <head>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> <!-- Lidhja me bootstrap -->
-  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="/main.css">
   <meta charset="UTF-8"> 
   <title>Kontratat</title>
   </head>
@@ -13,7 +13,7 @@
             <h1 style="color: #007fdb;"><b>Kontrata</b></h1>
           </div>
           <div class="form-group col-md-6">
-              <img src="prishtina.svg" width="100px" align="right">
+              <img src="/prishtina.svg" width="100px" align="right">
           </div>
       </div>
 
@@ -70,6 +70,9 @@
 <hr>
 <button class="btn btn-warning btn-lg" onclick="goBack()">Shko nje hap mbrapa</button><script type="text/javascript">function goBack() { window.history.back(); }</script> <button class="btn btn-danger btn-lg" onclick="myFunction()">Shtype kete kontrate</button><script type="text/javascript">function myFunction() {window.print();}</script> <a class="btn btn-success btn-lg" href="/kontrat/edit/<%= doc._id %>">Ndrysho Kontraten</a>
 <a class="btn btn-dark btn-lg" href="/kontrat/delete/<%= doc._id %>">Fshije kontraten</a>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2018 - Techstitution</p>
+    </footer>
 </div>
 <br>
 </body>

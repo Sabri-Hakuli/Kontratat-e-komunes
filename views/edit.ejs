@@ -2,7 +2,7 @@
 <html>
   <head>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> <!-- Lidhja me bootstrap -->
-  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="/main.css">
   <meta charset="UTF-8"> 
   <title>Kontratat</title>
   </head>
@@ -13,12 +13,9 @@
             <h1 style="color: #007fdb;"><b>Ndryshoni</b></h1>
           </div>
           <div class="form-group col-md-6">
-              <img src="prishtina.svg" width="100px" align="right">
+              <img src="/prishtina.svg" width="100px" align="right">
           </div>
       </div>
-
-	<br>
-	<br>
 	<form method="POST" action="/kontrat/update/<%= doc._id %>">
 <div class="form-row">
             <div class="form-group col-md-6">
@@ -105,6 +102,9 @@
           </div>
           <!-- Ketu perfundon Dergo dhe Fshij -->
 			<br>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2018 - Techstitution</p>
+    </footer>
 		</div>
 </body>
 </form>
