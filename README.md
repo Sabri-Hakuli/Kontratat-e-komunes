@@ -9,3 +9,5 @@ In terminal write the following commands:
 +    cd Kontratat-e-Komunes
 +    npm install
 +    npm start (or nodemon)
+
+http://localhost:3000/
