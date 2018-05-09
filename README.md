@@ -1,4 +1,4 @@
-# Kontratat-e-komunes
+# Kontratat-e-komunes     ![alt text](https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Prishtina_Municipality_Seal.svg/50px-Prishtina_Municipality_Seal.svg.png "Komuna e Prishtines")
 
 How to install in local environment
 
