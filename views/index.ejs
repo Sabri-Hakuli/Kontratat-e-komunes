@@ -30,24 +30,19 @@
               <img src="prishtina.svg" width="100px" align="right">
           </div>
       </div>
-  
-
-
-
-
-
-
-
-
+<input class="form-control mr-sm-2" id="myInput" type="search" placeholder="Kërko kontratën sipas numrit rendor të prokurorimit...">
     <br>
     <% docs.map((doc) => { %><p></p><% }); %>
-    <ol class="list-styled" id="myOL">
+    <ol class="list-styled" id="myUL">
       <% docs.map((doc) => { %>
       <hr>
       <div class="form-row">
-        <div class="form-group col-md-6"> <li><i> &nbsp  Nr rendor i prokurorimit: &nbsp&nbsp</i> <f> &nbsp&nbsp<%= doc.title %> &nbsp&nbsp</f>
+        <div class="form-group col-md-6"> 
+          <li><i> &nbsp  Nr rendor i prokurorimit: &nbsp&nbsp</i> <f> &nbsp&nbsp<%= doc.title %> &nbsp&nbsp</f>
         </div> 
-        <a class="btn btn-primary" href="/kontrat/<%= doc._id%>">Shiko Kontratën</a> <p> &nbsp </p> <a class="btn btn-danger" href="/kontrat/edit/<%= doc._id %>">Ndrysho Kontratën</a> <p> &nbsp </p><a class="btn btn-dark" href="/kontrat/delete/<%= doc._id %>">Fshije kontratën</a></li>
+        <a class="btn btn-primary" href="/kontrat/<%= doc._id%>">Shiko Kontratën</a> <p> &nbsp</p> 
+        <a class="btn btn-danger" href="/kontrat/edit/<%= doc._id %>">Ndrysho Kontratën</a> <p> &nbsp </p>
+        <a class="btn btn-dark" href="/kontrat/delete/<%= doc._id %>">Fshije kontratën</a>
       <hr>
       </div> <br>
       <% }); %>

@@ -1,14 +1,8 @@
-$( function() {
-  function log( message ) {
-    $( "<div>" ).text( message ).prependTo( "#log" );
-    $( "#log" ).scrollTop( 0 );
-  }
-
-  $( "#birds" ).autocomplete({
-    source: "search.php",
-    minLength: 2,
-    select: function( event, ui ) {
-      log( "Selected: " + ui.item.value + " aka " + ui.item.id );
-    }
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myUL li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
   });
-} );
+});
