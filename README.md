@@ -5,15 +5,16 @@ How to install in local environment
 In terminal write the following commands:
 
 ***
-+    git clone https://github.com/Sabri-Hakuli/Kontratat-e-komunes.git -- *Clone*
++    git clone https://github.com/Sabri-Hakuli/Kontratat-e-komunes.git 
 ***
-+    cd Kontratat-e-Komunes --  *change directory*
++    cd Kontratat-e-Komunes 
 ***
-+    npm install -- *install npm*
++    npm install 
 ***
-+    mongod -- *run mongo*
+
++    mongod 
 ***
-+    node app.js (or nodemon) -- *in other server node app.js*
++    node app.js (or nodemon) 
 ***
->    http://localhost:3000/  -- *in your browser type localhost:3000*
+>    http://localhost:3000/  
 
